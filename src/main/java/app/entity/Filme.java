@@ -1,28 +1,37 @@
 package app.entity;
 
+import lombok.*;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@NoArgsConstructor @AllArgsConstructor
+@ToString @EqualsAndHashCode
 @Table(name = "filme")
 public class Filme {
 
 @Id
 @Column(name = "codigo_filme")
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
+@Getter @Setter private Long id;
 
 @Column(name = "nomeBr")
-private String nome_br;
+@Getter @Setter private String nome_br;
 
 @Column(name = "nomeEng")
-private String nome_eng;
+@Getter @Setter private String nome_eng;
 
 @Column(name = "anoLancamento")
-private int ano_lancamento;
+@Getter @Setter private int ano_lancamento;
 
 @Column(name = "sinopse")
-private String sinopse;
+@Getter @Setter private String sinopse;
 
+@ManyToOne
+private Diretor diretor;
 
+@OneToMany(fetch = FetchType.EAGER)
+private List<Genero> genero;
 
 }
