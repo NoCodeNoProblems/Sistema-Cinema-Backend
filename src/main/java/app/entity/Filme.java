@@ -28,7 +28,7 @@ public class Filme {
 @Column(name = "sinopse")
 @Getter @Setter private String sinopse;
 
-@ManyToOne
+@OneToOne
 private Diretor diretor;
 
 @OneToMany(fetch = FetchType.EAGER)
