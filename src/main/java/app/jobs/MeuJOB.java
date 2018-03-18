@@ -18,10 +18,10 @@ public class MeuJOB {
 
     
     // @Scheduled ( cron  =  "[Segundos] [Minutos] [Horas] [Dia do mês] [Mês] [Dia da semana] [Ano]" )
-    @Scheduled(cron = "15 35 10 * * ?")
+    @Scheduled(fixedRate = 1000)
     public void reportCurrentTime() {
        // log.info("The time is now {}", dateFormat.format(new Date()));
-        System.out.println("teste");
+        System.out.println("Priscila Negona preta de Bonita");
     }
 
 }
