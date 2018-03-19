@@ -3,6 +3,7 @@ package app.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -11,7 +12,9 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @Table(name = "filme")
-public class Filme {
+public class Filme implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "codigo_filme")

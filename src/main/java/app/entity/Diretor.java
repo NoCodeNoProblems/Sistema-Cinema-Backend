@@ -3,6 +3,7 @@ package app.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @NoArgsConstructor
@@ -10,8 +11,9 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode
 @Table(name = "diretor")
-public class Diretor {
+public class Diretor implements Serializable {
 
+    private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "codigo_diretor")
